@@ -1,5 +1,46 @@
 <div id="container">
-	<app-header></app-header>
-	<app-nav></app-nav>
-	<app-main></app-main>
+	<div id="left" class="block">
+		<app-header></app-header>
+		<div class="nav-back">
+			<a href="#"
+				class="nav-back-btn"
+				[class.visible]="selectedSection"
+				[class.fadeOut]="mainFadeOut"
+				(click)="onBack()">
+				&lt;
+			</a>
+		</div>
+	</div>
+
+	<div id="right" class="block">
+		<ul class="nav" role="navigation"
+			[class.collapsed]="selectedSection">
+			<li
+			  *ngFor="let section of sections"
+			  class="nav-link"
+			  [ngClass]="{'selected' : section === selectedSection,
+			  'not-selected' : selectedSection && (section !== selectedSection), '' : !selectedSection }"
+			  [ngClass]="(section === selectedSection)? 'selected' : 'not-selected'"
+	  		  (click)="onSelect(section)">
+		      <a href="#">
+		      	<div class="nav-link-container">
+				  	<div class="plus plus-top nav-top" aria-hidden="true">+</div>
+				  	<div class="plus plus-line" aria-hidden="true"></div>
+				  	<div class="nav-label nav-bottom">
+					  	<div class="plus plus-bottom" aria-hidden="true">+</div>
+					  	<div class="nav-label-name">
+						{{ section.title.rendered }}
+						</div>
+					</div>
+				</div>
+			  </a>
+			</li>
+		</ul>
+
+		<app-main
+			[class.hasSection]="selectedSection!=undefined"
+			[class.fadeOut]="mainFadeOut"
+			[section]="selectedSection">	
+		</app-main>
+	</div>
 </div>

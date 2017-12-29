@@ -1,7 +1,7 @@
 <div class="main">
-	<h2>Main</h2>
-	<h3>Date</h3>
-	<p>
-  		main section
-	</p>
+	<div *ngIf="section">
+		<h2>{{ section.title.rendered }}</h2>
+		<div class="main-content"
+			[innerHTML]="section.content.rendered"></div>
+	</div>
 </div>
