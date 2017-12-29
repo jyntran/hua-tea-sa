@@ -2,13 +2,19 @@
 	<div id="left" class="block">
 		<app-header></app-header>
 		<div class="nav-back">
-			<a href="#"
+			<button href="#"
 				class="nav-back-btn"
+				alt="Back"
+				aria-label="Back"
 				[class.visible]="selectedSection"
+				[attr.aria-disabled]="!selectedSection"
+				[attr.tabindex]="2"
 				[class.fadeOut]="mainFadeOut"
 				(click)="onBack()">
-				&lt;
-			</a>
+				<span>
+					&lt;
+				</span>
+			</button>
 		</div>
 	</div>
 
@@ -17,12 +23,18 @@
 			[class.collapsed]="selectedSection">
 			<li
 			  *ngFor="let section of sections"
-			  class="nav-link"
-			  [ngClass]="{'selected' : section === selectedSection,
+  			  class="nav-link"
+  			  [ngClass]="{'selected' : section === selectedSection,
 			  'not-selected' : selectedSection && (section !== selectedSection), '' : !selectedSection }"
 			  [ngClass]="(section === selectedSection)? 'selected' : 'not-selected'"
-	  		  (click)="onSelect(section)">
-		      <a href="#">
+			  >
+		      <button
+			    [attr.disabled]="selectedSection && (section !== selectedSection)"
+			    [attr.aria-disabled]="selectedSection && (section !== selectedSection)"
+			    [attr.tabindex]="selectedSection && (section !== selectedSection) ? 0 : 1"
+			    [attr.alt]="section.title.rendered"
+			    (click)="onSelect(section)"
+				>
 		      	<div class="nav-link-container">
 				  	<div class="plus plus-top nav-top" aria-hidden="true">+</div>
 				  	<div class="plus plus-line" aria-hidden="true"></div>
@@ -33,7 +45,7 @@
 						</div>
 					</div>
 				</div>
-			  </a>
+			  </button>
 			</li>
 		</ul>
 
