@@ -33,8 +33,9 @@ button span {
   font-size: 10pt;
 }
 
-*:focus {
-  outline-color: #666666;
+a:focus,
+button:focus {
+  outline: none;
 }
 
 app-root {
@@ -151,13 +152,12 @@ app-main.hasSection.fadeOut {
 }
 
 .nav-link {
+  display: block;
   flex: 1;
+  overflow: hidden; /* Firefox */
   padding-top: 10pt;
-  transition: .8s all;
+  transition: .8s all; 
   width: 25%;
-}
-
-.nav-link.selected {
 }
 
 .nav-link.not-selected {
@@ -192,6 +192,51 @@ app-main.hasSection.fadeOut {
   opacity: 0;
   text-transform: lowercase;
   padding-top: 12pt;
+}
+
+a:focus,
+.nav-back-btn:focus span,
+.nav-link-btn:focus .plus,
+.nav-link-btn:focus .nav-label-name {
+  color: #999999;
+}
+
+a:focus,
+.nav-back-btn:focus span,
+.nav-link-btn:focus .nav-label-name {
+  text-decoration: underline;
+}
+
+.nav-link-btn:focus .plus-line {
+  background-color: #999999;
+}
+
+.nav-back-btn:active span,
+.nav-link-btn:active .plus,
+.nav-link.selected .plus {
+  color: #cccccc;
+}
+
+a:active,
+.nav-back-btn:active span,
+.nav-back-btn:focus:hover span,
+.nav-link-btn:active .nav-label-name,
+.nav-link-btn:focus:hover .nav-label-name,
+.nav-link.selected .nav-label-name {
+  color: #aaaaaa;
+  text-decoration: none;
+}
+
+.nav-link-btn:active .plus-line,
+.nav-link.selected .plus-line {
+  background-color: #cccccc;
+}
+
+.nav-back-btn::-moz-focus-inner,
+.nav-link-btn::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
 @keyframes nav-fade-in {

@@ -2,7 +2,7 @@
 	<div id="left" class="block">
 		<app-header></app-header>
 		<div class="nav-back">
-			<button href="#"
+			<button
 				class="nav-back-btn"
 				alt="Back"
 				aria-label="Back"
@@ -29,6 +29,7 @@
 			  [ngClass]="(section === selectedSection)? 'selected' : 'not-selected'"
 			  >
 		      <button
+		      	class="nav-link-btn"
 			    [attr.disabled]="selectedSection && (section !== selectedSection)"
 			    [attr.aria-disabled]="selectedSection && (section !== selectedSection)"
 			    [attr.tabindex]="selectedSection && (section !== selectedSection) ? 0 : 1"
