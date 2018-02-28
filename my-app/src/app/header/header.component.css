@@ -1,7 +1,13 @@
 .site-title {
-	font-size: 10pt;
-	font-weight: normal;
-	letter-spacing: 8pt;
-	padding: 4pt;
-	text-align: right;
+  font-size: 10pt;
+  font-weight: normal;
+  letter-spacing: 8pt;
+  padding: 4pt;
+  text-align: right;
+}
+
+@media (max-width: 780px) {
+  .site-title {
+    letter-spacing: 4pt;
+  }
 }
