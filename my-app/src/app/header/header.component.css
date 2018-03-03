@@ -1,9 +1,15 @@
 .site-title {
+  cursor: pointer;
   font-size: 10pt;
   font-weight: normal;
   letter-spacing: 8pt;
   padding: 4pt;
   text-align: right;
+  transition: all .2s;
+}
+
+.site-title:hover {
+  color: #eed8c8;
 }
 
 @media (max-width: 780px) {

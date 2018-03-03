@@ -159,6 +159,10 @@ app-main.hasSection.fadeOut {
   width: 25%;
 }
 
+.nav-link.selected button {
+  cursor: initial;
+}
+
 .nav-link.not-selected {
   flex: 0;
   opacity: 0;
@@ -193,11 +197,25 @@ app-main.hasSection.fadeOut {
   padding-top: 12pt;
 }
 
+a,
+.nav-back-btn span,
+.nav-link-btn .plus,
+.nav-link-btn .nav-label-name {
+  transition: all .2s;
+}
+
 a:focus,
 .nav-back-btn:focus span,
 .nav-link-btn:focus .plus,
 .nav-link-btn:focus .nav-label-name {
   color: #999999;
+}
+
+a:hover,
+.nav-back-btn:hover span,
+.nav-link-btn:hover .plus,
+.nav-link-btn:hover .nav-label-name {
+  color: #eed8c8;
 }
 
 a:focus,
@@ -206,8 +224,16 @@ a:focus,
   text-decoration: underline;
 }
 
+.nav-link-btn .plus-line {
+  transition: all .4s;
+}
+
 .nav-link-btn:focus .plus-line {
   background-color: #999999;
+}
+
+.nav-link-btn:hover .plus-line {
+  background-color: #eed8c8;
 }
 
 .nav-back-btn:active span,
