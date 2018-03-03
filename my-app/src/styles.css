@@ -359,15 +359,15 @@ a:active,
 
 @media (max-width: 720px) {
   #container {
-    width: 95%;
+    width: 90%;
   }
 
   #left {
-    width: 20%;
+    width: 15%;
   }
 
   #right {
-    width: 80%;
+    width: 85%;
   }
 }
 
