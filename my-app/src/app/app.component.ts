@@ -48,6 +48,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.loadSections()
+    console.log(this.sections)
   }
 
 }

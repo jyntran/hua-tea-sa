@@ -1,0 +1,21 @@
+#footer {
+  bottom: 0;
+  display: none;
+  padding: 4pt;
+  position: fixed;
+  right: 0;
+}
+
+#footer a {
+  color: #aaaaaa;
+}
+
+#footer a:hover {
+  color: #eed8c8;
+}
+
+@media (min-width: 1000px) {
+  #footer {
+  	display: block;
+  }
+}

@@ -11,14 +11,13 @@ body {
 	background-color: #f5f4f3;
 	color: #aaaaaa;
 	font-family: 'Tex Gyre Adventor', 'Roboto', sans serif;
-	font-size: 10pt;
+	font-size: 9pt;
 	margin: 0;
   overflow-x: hidden;
 	text-transform: lowercase;
 }
 
 a {
-	color: #aaaaaa;
   text-decoration: none;
 }
 
@@ -160,6 +159,10 @@ app-main.hasSection.fadeOut {
   width: 25%;
 }
 
+.nav-link.selected button {
+  cursor: initial;
+}
+
 .nav-link.not-selected {
   flex: 0;
   opacity: 0;
@@ -194,11 +197,25 @@ app-main.hasSection.fadeOut {
   padding-top: 12pt;
 }
 
+a,
+.nav-back-btn span,
+.nav-link-btn .plus,
+.nav-link-btn .nav-label-name {
+  transition: all .2s;
+}
+
 a:focus,
 .nav-back-btn:focus span,
 .nav-link-btn:focus .plus,
 .nav-link-btn:focus .nav-label-name {
   color: #999999;
+}
+
+a:hover,
+.nav-back-btn:hover span,
+.nav-link-btn:hover .plus,
+.nav-link-btn:hover .nav-label-name {
+  color: #eed8c8;
 }
 
 a:focus,
@@ -207,8 +224,16 @@ a:focus,
   text-decoration: underline;
 }
 
+.nav-link-btn .plus-line {
+  transition: all .4s;
+}
+
 .nav-link-btn:focus .plus-line {
   background-color: #999999;
+}
+
+.nav-link-btn:hover .plus-line {
+  background-color: #eed8c8;
 }
 
 .nav-back-btn:active span,
@@ -262,7 +287,7 @@ a:active,
 .plus-line {
   background-color: #cccccc;
   margin: 0 auto;
-  width: 1pt;
+  width: 1px;
 }
 
 .nav-link .plus-line {
@@ -323,14 +348,63 @@ a:active,
   }
 }
 
-.main {
-  margin: 10pt;
+.main-content a {
+  color: #cda282;
+  transition: all .2s;
 }
 
-h2, h3 {
-  font-size: 10pt;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
+.main-content a:hover {
+  color: #eed8c8;
 }
 
+@media (max-width: 720px) {
+  #container {
+    width: 90%;
+  }
+
+  #left {
+    width: 15%;
+  }
+
+  #right {
+    width: 85%;
+  }
+}
+
+.icon {
+  display: inline-block;
+  height: 1.5em;
+  width: 1.5em;
+  position: relative;
+  border-radius: 100%;
+  border: 1px solid #bbb;
+  text-align: center;
+  transition: all .2s;
+  max-width: 1.5em;
+  line-height: 1.5em;
+}
+
+.icon-symbol {
+  position: relative;
+  font-size: 1em;
+  color: #bbb;
+  font-family: FontAwesome;
+  width: 100%;
+  height: 100%;
+}
+
+.icon,
+.icon-symbol,
+.icon-label {
+  color: #aaaaaa;
+}
+
+.icon-container:hover .icon,
+.icon-container:hover .icon-symbol,
+.icon-container:hover .icon-label {
+  color: #eed8c8;
+}
+
+.icon-container:hover .icon {
+  border-color: #eed8c8;
+}
