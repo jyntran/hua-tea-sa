@@ -2,6 +2,6 @@
 	<div *ngIf="section">
 		<h2>{{ section.title.rendered }}</h2>
 		<div class="main-content"
-			[innerHTML]="section.content.rendered"></div>
+			[innerHTML]="section.content.rendered | safeHtml"></div>
 	</div>
 </div>

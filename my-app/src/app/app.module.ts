@@ -4,13 +4,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { MainComponent } from './main/main.component';
+import { MainComponent, SafeHtmlPipe } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
