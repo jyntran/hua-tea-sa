@@ -8,7 +8,7 @@ export class SectionService {
 		private http: Http
 	) {}
 
-	sectionsURL = 'http://portfolio.huateasa.ca/wp-json/wp/v2/sections'
+	sectionsURL = 'https://portfolio.huateasa.ca/wp-json/wp/v2/sections'
 
 	getSections() {
 		return this.http.get(this.sectionsURL)
